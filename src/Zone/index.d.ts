@@ -7,8 +7,11 @@ type FindResult =
 	| LuaTuple<[isWithinZone: true, touchingParts: BasePart[]]>
 	| LuaTuple<[isWithinZone: false, touchingParts: undefined]>;
 
+/** Represents a model with a humanoid and HRP. */
+type CharacterOrNPC = Model & { Humanoid: Humanoid; HumanoidRootPart: BasePart };
+
 /** Represents a model (usually a character) or a part. */
-type Item = BasePart | Model;
+type Item = BasePart | CharacterOrNPC;
 
 interface SettingsGroupProperties {
 	/**
@@ -108,7 +111,7 @@ declare class Zone {
 	public unbindFromGroup(): void;
 
 	/** Sets the accuracy of the zone. */
-	public setAccuracy(accuracy: AccuracyEnum): void;
+	public setAccuracy(accuracy: keyof AccuracyEnum): void;
 
 	/** Sets the detection level of the zone. */
 	public setDetection(detection: keyof DetectionEnum): void;
