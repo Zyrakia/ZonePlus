@@ -1,6 +1,8 @@
 # Project place file
-/Open Source Projects.rbxlx
+Open Source Projects.rbxlx
 
 # Roblox Studio lock files
-/*.rbxlx.lock
-/*.rbxl.lock
+*.rbxlx.lock
+*.rbxl.lock
+
+node_modules

@@ -1,0 +1,32 @@
+{
+	"name": "@rbxts/zoneplus",
+	"description": "Typings for 1ForeverHD's ZonePlus v3.2.0.",
+	"version": "3.2.0",
+	"author": "Zyrakia",
+	"license": "MIT",
+	"main": "src/init.lua",
+	"types": "src/index.d.ts",
+	"homepage": "https://github.com/1ForeverHD/ZonePlus",
+	"repository": {
+		"type": "git",
+		"url": "htrtps://github.com/Zyrakia/zoneplus"
+	},
+	"keywords": [
+		"roblox",
+		"roblox-ts",
+		"rbxts",
+		"zone",
+		"zoneplus",
+		"region",
+		"region3",
+		"spacialquery"
+	],
+	"files": [
+		"src"
+	],
+	"devDependencies": {
+		"@rbxts/compiler-types": "^1.2.9-types.0",
+		"@rbxts/types": "^1.0.571",
+		"typescript": "^4.5.5"
+	}
+}
