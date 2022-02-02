@@ -1,4 +1,4 @@
-import { Zone, SettingsGroup, SettingsGroupProperties } from 'Zone/index';
+import { Zone, SettingsGroup, SettingsGroupProperties } from '..';
 
 /**
  * Houses all of the Zones in the game and allows

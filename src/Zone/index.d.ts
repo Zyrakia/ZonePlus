@@ -1,6 +1,6 @@
-import { Signal } from 'Zone/Signal';
-import { DetectionEnum } from 'Zone/Enum/Detection';
-import { AccuracyEnum } from 'Zone/Enum/Accuracy';
+import { Signal } from './Signal';
+import { DetectionEnum } from './Enum/Detection';
+import { AccuracyEnum } from './Enum/Accuracy';
 
 /** Represents the result that is returned from most find operations. */
 type FindResult =

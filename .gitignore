@@ -5,4 +5,8 @@ Open Source Projects.rbxlx
 *.rbxlx.lock
 *.rbxl.lock
 
+# NPM Modules
 node_modules
+
+# NPM Tarballs
+*.tgz
