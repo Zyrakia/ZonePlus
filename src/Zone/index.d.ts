@@ -1,6 +1,5 @@
+import { Enum } from './Enum';
 import { Signal } from './Signal';
-import { DetectionEnum } from './Enum/Detection';
-import { AccuracyEnum } from './Enum/Accuracy';
 
 /** Represents the result that is returned from most find operations. */
 type FindResult =
@@ -30,6 +29,11 @@ interface SettingsGroup extends SettingsGroupProperties {}
  * players and parts within their boundaries.
  */
 declare class Zone {
+	/**
+	 * Houses all enums used by the Zone class.
+	 */
+	public static enum: typeof Enum;
+
 	/**
 	 * Constructs a zone from the given CFrame and Size. Underneat
 	 * the hood, it's creating a part (or multiple parts if any size
@@ -111,10 +115,10 @@ declare class Zone {
 	public unbindFromGroup(): void;
 
 	/** Sets the accuracy of the zone. */
-	public setAccuracy(accuracy: keyof AccuracyEnum): void;
+	public setAccuracy(accuracy: keyof typeof Enum.Accuracy): void;
 
 	/** Sets the detection level of the zone. */
-	public setDetection(detection: keyof DetectionEnum): void;
+	public setDetection(detection: keyof typeof Enum.Detection): void;
 
 	/**
 	 * Moves the zone outside of the workspace and into a separate WorldModel within
@@ -187,22 +191,22 @@ declare class Zone {
 	public itemExited: Signal<(item: Item) => void>;
 
 	/**
-	 * The current accuracy of the zone. Defaults to {@link AccuracyEnum.High}.
+	 * The current accuracy of the zone. Defaults to {@link Enum.Accuracy.High}.
 	 * To set the accuracy of the zone see {@link setAccuracy()}.
 	 */
-	public readonly accuracy: keyof AccuracyEnum;
+	public accuracy: Enum.Accuracy;
 
 	/**
-	 * The current enter detection level of the zone. Defaults to {@link DetectionEnum.Automatic}.
+	 * The current enter detection level of the zone. Defaults to {@link Enum.Detection.Automatic}.
 	 * To set both the enter and exit detection levels of the zone see {@link setDetection()}.
 	 */
-	public readonly enterDetection: keyof DetectionEnum;
+	public enterDetection: Enum.Detection;
 
 	/**
-	 * The currente nter detection level of the zone. Defaults to {@link DetectionEnum.Automatic}.
+	 * The currente nter detection level of the zone. Defaults to {@link Enum.Detection.Automatic}.
 	 * To set both the enter and exit detection levels of the zone see {@link setDetection()}.
 	 */
-	public readonly exitDetection: keyof DetectionEnum;
+	public exitDetection: Enum.Detection;
 
 	/**
 	 * When true, the zone will update when it's group parts change size or position,
